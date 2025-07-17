@@ -30,7 +30,9 @@ const createMonth = (elem, year, month) => {
     
     let table = `
     <table class="calendar__month ${dateYearAndMonth.toLocaleString('en-US', options).toLowerCase()}">
-    <caption class="month__header">${monthforHeader} ${year}</caption>
+    <caption class="month__header">
+        <h2 class="month__title">${monthforHeader}</h2>
+    </caption>
     <tr class="weekday-date">
         <th>Пн</th>
         <th>Вт</th>

@@ -1,12 +1,104 @@
+html,
+:has(:target) {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:where(
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  dl
+):where([class]) {
+  margin-block: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+:where(ul[class]) {
+  list-style: none;
+}
+
+p {
+  --paragraphMarginBottom: 24px;
+
+  margin-block: 0;
+}
+
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+svg *[fill] { fill: currentColor }
+svg *[stroke] { stroke: currentColor }
+
+svg * {
+  transition-property: fill, stroke;
+}
+
+/** Удаляем все анимации и переходы для людей, которые предпочитают их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 body {
-  margin-top: 35px;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
-  align-items: center;
   row-gap: 50px;
 }
 
 .year-navigation-wrapper {
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,8 +111,26 @@ body {
   column-gap: 15px;
 }
 
+.current-year {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+button {
+  padding: 15px;
+  background-color: #a9dce4;
+  border: none;
+  border-radius: 10px;
+  transition-duration: 0.2s;
+}
+
+button:hover {
+  background-color: #1eb8d0;
+}
+
 .container {
-  max-width: 1300px;
+  max-width: 1250px;
+  width: 100%;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -31,12 +141,71 @@ table {
   border-collapse: collapse;
 }
 
-caption {
+.month__header {
+  height: 140px;
   padding: 10px 0;
   background-color: #a9dce4;
+  font-size: 18px;
+  font-weight: 600;
   border: 1px solid gray;
   border-radius: 8px 8px 0 0;
   border-bottom: none;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.month__title {
+  padding-top: 90px;
+  color: rgb(241, 236, 245);
+}
+
+.january .month__header {
+  background-image: url(/images/1.jpg);
+}
+
+.february .month__header {
+  background-image: url(/images/2.jpg);
+}
+
+.march .month__header {
+  background-image: url(/images/3.jpg);
+}
+
+.april .month__header {
+  background-image: url(/images/4.jpg);
+}
+
+.may .month__header {
+  background-image: url(/images/5.jpg);
+}
+
+.june .month__header {
+  background-image: url(/images/6.jpg);
+}
+
+.july .month__header {
+  background-image: url(/images/7.jpg);
+}
+
+.august .month__header {
+  background-image: url(/images/8.jpg);
+}
+
+.september .month__header {
+  background-image: url(/images/9.jpg);
+}
+
+.october .month__header {
+  background-image: url(/images/10.jpg);
+}
+
+.november .month__header {
+  background-image: url(/images/11.jpg);
+}
+
+.december .month__header {
+  background-image: url(/images/12.jpg);
 }
 
 td,
@@ -45,6 +214,12 @@ th {
   padding: 4px;
   text-align: center;
   font-size: 14px;
+  transition-duration: 0.3s;
+}
+
+td:hover {
+  background-color: rgb(255, 147, 107);
+  border-radius: 50%;
 }
 
 th {
