@@ -1,0 +1,48 @@
+body {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 50px;
+}
+
+.year-navigation {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.container {
+  max-width: 1400px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+table {
+  border-collapse: collapse;
+  
+}
+
+caption {
+  padding: 10px 0;
+  background-color: #a9dce4;
+  border: 1px solid gray;
+  border-radius: 8px 8px 0 0;
+  border-bottom: none;
+}
+
+td,
+th {
+  border: 1px solid gray;
+  padding: 4px;
+  text-align: center;
+  font-size: 14px;
+}
+
+th {
+  font-weight: bold;
+  background-color: #a9dce4;
+}
