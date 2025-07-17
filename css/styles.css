@@ -1,10 +1,16 @@
 body {
   margin-top: 35px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   row-gap: 50px;
+}
+
+.year-navigation-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
 }
 
 .year-navigation {
@@ -14,7 +20,7 @@ body {
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1300px;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -23,7 +29,6 @@ body {
 
 table {
   border-collapse: collapse;
-  
 }
 
 caption {

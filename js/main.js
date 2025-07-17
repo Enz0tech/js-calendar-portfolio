@@ -1,8 +1,5 @@
 let currentYear = new Date().getFullYear()
-
-
-
-
+let currentMonth = new Date().getMonth() + 1
 /**
  * Функция создаёт месяц для календаря в виде таблицы.
  * @param {string} elem html-элемент или тег куда будет вставляться таблица.
@@ -30,7 +27,7 @@ const createMonth = (elem, year, month) => {
     }
     const monthforHeader = monthOnARussianLanguageWithUpperCaseFirstLetterForHeader()
 
-
+    
     let table = `
     <table class="calendar__month ${dateYearAndMonth.toLocaleString('en-US', options).toLowerCase()}">
     <caption class="month__header">${monthforHeader} ${year}</caption>
@@ -92,6 +89,19 @@ const createAllCalendar = () => {
 createAllCalendar()
 
 /**
+ * Функция, которая отображает текущий год и месяц отдельно.
+ * @param {string} elem html тег, в который будет вставлен текущий месяц.
+ */
+const createCurrentMonth = (elem) => {
+    elem = document.querySelector(elem)
+    
+    createMonth('.current-month', currentYear, currentMonth)
+}
+
+createCurrentMonth()
+
+
+/**
  * Функция, которая создаёт навигацию по годам.
  * @param {string} elem html тег, в который будет вставляться навигация
  */
@@ -111,6 +121,7 @@ createYearsNavigation('.year-navigation')
 
 /**
  * Функция, которая при клике на кнопку показывает календарь на предыдущий год.
+ * При этом очищает от старой разметки.
  */
 const displayPreviousYear = () => {
     const buttonPreviousYear = document.querySelector('.previous-year')
@@ -130,6 +141,7 @@ displayPreviousYear()
 
 /**
  * Функция, которая при клике на кнопку показывает календарь на следующий год.
+ * При этом очищает от старой разметки.
  */
 const displayNextYear = () => {
     const buttonNextYear = document.querySelector('.next-year')
