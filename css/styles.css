@@ -94,7 +94,8 @@ body {
   margin-top: 50px;
   display: flex;
   justify-content: center;
-  row-gap: 50px;
+  column-gap: 30px;
+  background-color: rgb(245, 239, 227);
 }
 
 .year-navigation-wrapper {
@@ -114,31 +115,77 @@ body {
 .current-year {
   font-size: 30px;
   font-weight: 600;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 5px 15px;
 }
 
 button {
+  position: relative;
   padding: 15px;
   background-color: #a9dce4;
   border: none;
   border-radius: 10px;
   transition-duration: 0.2s;
+  font-size: 24px;
+  cursor: pointer;
+  transition-duration: 0.3s;
 }
 
 button:hover {
   background-color: #1eb8d0;
 }
 
+button:active {
+  background-color: #0c7f91;
+}
+
+.previous-year::after {
+  content: '<';
+}
+
+.previous-year:hover {
+  transform: translateX(-5px);
+}
+
+.next-year::after {
+  content: '>';
+}
+
+.next-year:hover {
+  transform: translateX(5px);
+}
+
+.contacts-list {
+  display: flex;
+  column-gap: 20px;
+}
+
+.contacts-item {
+  transition-duration: 0.2s;
+}
+
+.contacts-item:hover {
+  scale: 1.2;
+  transition-duration: 0.2s;
+}
+
 .container {
   max-width: 1250px;
   width: 100%;
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-around;
+  gap: 15px;
   flex-wrap: wrap;
 }
 
 table {
   border-collapse: collapse;
+}
+
+table tbody {
+  width: 183px;
+  height: 180px;
 }
 
 .month__header {
@@ -211,18 +258,35 @@ table {
 td,
 th {
   border: 1px solid gray;
-  padding: 4px;
   text-align: center;
   font-size: 14px;
   transition-duration: 0.3s;
 }
 
-td:hover {
-  background-color: rgb(255, 147, 107);
+.cell-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.cell-inner:hover {
+  border: 1px solid gray;
+  background-color: rgb(255, 147, 107);
+
+}
+
+.cell-inner.is-active {
+  background-color: rgb(170, 165, 165);
+  border: 1px solid gray;
 }
 
 th {
+  height: 30px;
   font-weight: bold;
   background-color: #a9dce4;
 }

@@ -49,7 +49,7 @@ const createMonth = (elem, year, month) => {
     }
     
     while (dateYearAndMonth.getMonth() == monthTwelveType) {
-        table += '<td>' + dateYearAndMonth.getDate() + '</td>'
+        table += '<td><span class="cell-inner">' + dateYearAndMonth.getDate() + '</span></td>'
         if (getDay(dateYearAndMonth) === 6) {
             table += '</tr><tr class="weekday-days">'
         }
@@ -111,9 +111,9 @@ const createYearsNavigation = (elem) => {
     elem = document.querySelector(elem)
 
     let yearsNavigation = `
-    <button class="previous-year" type="button"><</button>
+    <button class="previous-year" type="button"></button>
     <div class="current-year">${currentYear}</div>
-    <button class="next-year" type="button">></button>
+    <button class="next-year" type="button"></button>
     `
 
     elem.insertAdjacentHTML('afterBegin', yearsNavigation) 
@@ -160,3 +160,39 @@ const displayNextYear = () => {
 }
 
 displayNextYear()
+
+/**
+ * Функция, которая создаёт и вставляет список контактов в html разметку.
+ * @param {string} elem html тег, в который юудет вставлен список контактов.
+ */
+const makeAContactsList = (elem) => {
+    elem = document.querySelector(elem)
+
+    let contactsList = `
+    <ul class="contacts-list">
+        <li class="contacts-item"><a href="https://vk.com/enzotech" target="_blank" rel="noopener noreferrer"><img src="/icons/vkontakte.png" alt="" width="25" height="25" loading="lazy"></a></li>
+        <li class="contacts-item"><a href="https://t.me/enzotech" target="_blank" rel="noopener noreferrer"><img src="/icons/telegram.png" alt="" width="25" height="25" loading="lazy"></a></li>
+        <li class="contacts-item"><a href="https://github.com/Enz0tech" target="_blank" rel="noopener noreferrer"><img src="/icons/github.png" alt="" width="25" height="25" loading="lazy"></a></li>
+    </ul>
+    `
+
+    elem.insertAdjacentHTML('afterBegin', contactsList)
+}
+
+makeAContactsList('.contacts')
+
+
+// const makeActiveCell = () => {
+//     const isActiveCell = document.querySelectorAll('.cell-inner')
+
+//         cells.forEach(cell => {
+//         cell.addEventListener('click', () => {
+//             cell.classList.toggle('is-active') // БЕЗ точки!
+//         })
+//     })
+//     // addEventListener('click', () => {
+//     //     isActiveCell.forEach(cell => cell.classList.toggle('is-active'));
+//     // })
+// }
+
+// makeActiveCell()
