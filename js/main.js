@@ -172,9 +172,9 @@ const makeAContactsList = (elem) => {
 
     let contactsList = `
     <ul class="contacts-list">
-        <li class="contacts-item"><a href="https://vk.com/enzotech" target="_blank" rel="noopener noreferrer"><img src="../icons/vkontakte.png" alt="" width="25" height="25" loading="lazy"></a></li>
-        <li class="contacts-item"><a href="https://t.me/enzotech" target="_blank" rel="noopener noreferrer"><img src="../icons/telegram.png" alt="" width="25" height="25" loading="lazy"></a></li>
-        <li class="contacts-item"><a href="https://github.com/Enz0tech" target="_blank" rel="noopener noreferrer"><img src="../icons/github.png" alt="" width="25" height="25" loading="lazy"></a></li>
+        <li class="contacts-item"><a href="https://vk.com/enzotech" target="_blank" rel="noopener noreferrer"><img src="./icons/vkontakte.png" alt="" width="25" height="25" loading="lazy"></a></li>
+        <li class="contacts-item"><a href="https://t.me/enzotech" target="_blank" rel="noopener noreferrer"><img src="./icons/telegram.png" alt="" width="25" height="25" loading="lazy"></a></li>
+        <li class="contacts-item"><a href="https://github.com/Enz0tech" target="_blank" rel="noopener noreferrer"><img src="./icons/github.png" alt="" width="25" height="25" loading="lazy"></a></li>
     </ul>
     `
 

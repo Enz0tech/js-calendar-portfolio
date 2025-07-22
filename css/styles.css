@@ -172,7 +172,8 @@ button:active {
 }
 
 .container {
-  max-width: 1250px;
+  max-width: 1400px;
+  padding-block: 25px;
   width: 100%;
   display: flex;
   justify-content: space-around;
