@@ -91,6 +91,7 @@ svg * {
 }
 
 body {
+  font-family: 'Courier New', Courier, monospace;
   margin-top: 50px;
   display: flex;
   justify-content: center;

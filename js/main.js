@@ -136,6 +136,7 @@ const displayPreviousYear = () => {
         body.innerHTML = ''
 
         createAllCalendar()
+        makeActiveCell()
     })
 }
 
@@ -156,6 +157,7 @@ const displayNextYear = () => {
         body.innerHTML = ''
 
         createAllCalendar()
+        makeActiveCell()
     })
 }
 
@@ -182,17 +184,21 @@ const makeAContactsList = (elem) => {
 makeAContactsList('.contacts')
 
 
-// const makeActiveCell = () => {
-//     const isActiveCell = document.querySelectorAll('.cell-inner')
+/**
+ * Функция, которая выделяет день в календаре при клике.
+ * Повторно вызывается в других функциях displayPreviousYear() и displayNextYear()
+ */
+const makeActiveCell = () => {
+    const isActiveCell = document.querySelectorAll('.cell-inner')
 
-//         cells.forEach(cell => {
-//         cell.addEventListener('click', () => {
-//             cell.classList.toggle('is-active') // БЕЗ точки!
-//         })
-//     })
-//     // addEventListener('click', () => {
-//     //     isActiveCell.forEach(cell => cell.classList.toggle('is-active'));
-//     // })
-// }
+    isActiveCell.forEach(cell => {
+        cell.addEventListener('click', () => {
+            isActiveCell.forEach(c => c.classList.remove('is-active'))
+            
+            cell.classList.add('is-active')
+        })
+    })
+    
+}
 
-// makeActiveCell()
+makeActiveCell()
