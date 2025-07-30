@@ -131,31 +131,47 @@ button {
   transition-duration: 0.2s;
   font-size: 24px;
   cursor: pointer;
-  transition-duration: 0.3s;
-}
-
-button:hover {
-  background-color: #1eb8d0;
-}
-
-button:active {
-  background-color: #0c7f91;
 }
 
 .previous-year::after {
   content: '<';
 }
 
-.previous-year:hover {
-  transform: translateX(-5px);
+/* ХОВЕР НА ТАЧ УСТРОЙСТВАХ */
+
+@media (hover: hover) {
+  .previous-year:hover {
+    transform: translateX(-5px);
+    background-color: #1eb8d0;
+  }
+
+  .previous-year:active {
+    background-color: #0c7f91;
+  }
+
+  .next-year:hover {
+    transform: translateX(5px);
+    background-color: #1eb8d0;
+  }
+
+  .next-year:active {
+    background-color: #0c7f91;
+  }
+}
+@media (hover: none) {
+  .previous-year:active {
+    transform: translateX(-5px);
+    background-color: #1eb8d0;
+  }
+
+  .next-year:active {
+    transform: translateX(5px);
+    background-color: #1eb8d0;
+  }
 }
 
 .next-year::after {
   content: '>';
-}
-
-.next-year:hover {
-  transform: translateX(5px);
 }
 
 .contacts-list {
