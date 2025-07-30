@@ -132,7 +132,7 @@ const displayPreviousYear = () => {
         const yearDisplay = document.querySelector('.current-year')
         yearDisplay.textContent = currentYear
 
-        body = document.querySelector('.container')
+        const body = document.querySelector('.container')
         body.innerHTML = ''
 
         createAllCalendar()
@@ -153,7 +153,7 @@ const displayNextYear = () => {
         const yearDisplay = document.querySelector('.current-year')
         yearDisplay.textContent = currentYear
 
-        body = document.querySelector('.container')
+        const body = document.querySelector('.container')
         body.innerHTML = ''
 
         createAllCalendar()
