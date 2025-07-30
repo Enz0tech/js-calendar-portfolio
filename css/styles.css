@@ -323,11 +323,6 @@ th {
     justify-content: center;
   }
 
-  .cell-inner {
-    width: 30px;
-    height: 30px;
-  }
-
   .year-navigation-wrapper {
     padding-top: 30px;
   }
